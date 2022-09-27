@@ -1,0 +1,129 @@
+<!-- tugas Pengembangan Aplikasi Mobile
+Nama : M. Anwar Ibrahim
+NIM : 119140221
+Kelas : RD -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* style tabel */
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          margin-left: auto;
+          margin-right: auto;
+          width: 500px;;
+        }
+        
+        td, th {
+          border: 1px solid #fbfbfb;
+          text-align: left;
+          padding: 8px;
+        }
+        
+        th {
+          background-color: #a5c4e7;
+          color:rgb(255, 255, 255)
+
+        }
+
+        tr:nth-child(even) {
+          background-color: #dddddd;
+        }
+
+        tr:nth-child(odd) {
+          background-color: #f3f3f3;
+        }
+        </style>
+</head>
+<body>
+  <!-- paragraph judul -->
+  <h2 style="text-align:center;">Tugas Individu 1 Pengembangan Aplikasi Mobile</h2>
+  <p>Nama : M. Anwar Ibrahim
+    <br> 
+    NIM   : 119140221
+    <br>
+    Kelas  : RB
+  </p>
+
+    <!-- Pembuatan tabel -->
+    <table id='tabel1'>
+      <!-- header tabel -->
+        <tr>
+          <th>No</th>
+          <th>Nama</th>
+          <th>NIM</th>
+          <th>Nilai</th>
+          <th>Huruf Mutu</th>
+        </tr>
+       
+      </table>  
+
+      <!-- syntax Javascript -->
+      <script>
+
+        // Arrray Data niai dan nama
+        let nama=['Boy','Aldi','Ade','Julia','Rini','Naufal','basit','fahmi','aziz','Farhan'];
+        let nilai=[60,70,7,50,80,40,30,100,75,76];
+    
+        //  variabel baris tabel,nim,dan no pada tabel
+         let jumrow=1;
+         let dnim=123;
+         let number=1;
+
+        //  memasukan data ke dalam tabel
+         let tabel=document.getElementById("tabel1");
+         for(let i=0;i<10;i++){
+          
+        // penempatan nomor cell dan baris tabel
+         let row=tabel.insertRow(jumrow);
+         let cell1 = row.insertCell(0);
+         let cell2 = row.insertCell(1);
+         let cell3 = row.insertCell(2);
+         let cell4 = row.insertCell(3);
+         let cell5 = row.insertCell(4);
+
+         //assign data ke dalam tabel sesuai nomor cell
+         cell1.innerHTML=number;
+         cell2.innerHTML=nama[i];
+         cell3.innerHTML=dnim;
+         cell4.innerHTML=nilai[i];
+
+         let nmutu;
+
+        //  kondisi nilai mutu
+         if(nilai[i]>=80){
+           nmutu='A';
+         }else if(nilai[i]>=70 && nilai[i]<80){
+           nmutu='AB';
+         }else if(nilai[i]>=60 && nilai[i]<70){
+           nmutu='B';
+         }else if(nilai[i]>=50 && nilai[i]<60){
+           nmutu='BC';
+         }else if(nilai[i]>=40 && nilai[i]<50){
+           nmutu='C';
+         }else if(nilai[i]>=10 && nilai[i]<40){
+           nmutu='D';
+         }else{
+           nmutu='E';
+         }
+         
+         //assign nilai mutu ke dalam tabel
+         cell5.innerHTML=nmutu;
+
+         //penambahan +1 pada no, baris dan nim(untuk perulangan selanjutnya)
+         number++;
+         jumrow++;
+         dnim++;
+
+         }
+
+      </script>
+</body>
+</html>
